@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology | SWD KOREA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .sn-reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+
+        .sn-reveal.sn-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-[#FAFAFA] font-sans text-zinc-900 selection:bg-zinc-900 selection:text-white">
+
+    <!-- Header (다크 모드 고정) -->
+    <header
+        class="fixed top-0 w-full z-50 px-6 md:px-12 py-5 flex justify-between items-center transition-all duration-300 border-b border-white/10 bg-zinc-900/90 backdrop-blur-md text-white">
+
+        <!-- 로고 및 홈 링크 -->
+        <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <!-- 스크롤 전: 어두운 배경에서 보일 밝은(흰색) 로고 -->
+            <img src="logo_white.png" id="logo-light" alt="SWD Logo Light" class="h-8 md:h-10 w-auto object-contain">
+
+            <!-- 스크롤 후: 하얀 배경에서 보일 기존(검은/파란색) 로고 (처음엔 hidden으로 숨김) -->
+            <img src="logo.png" id="logo-dark" alt="SWD Logo Dark" class="h-8 md:h-10 w-auto object-contain hidden">
+
+            <span class="text-2xl font-black tracking-tighter mt-1">SWD KOREA</span>
+        </a>
+
+        <nav class="hidden md:flex gap-10 text-[13px] font-semibold tracking-wide uppercase">
+            <a href="about.html" class="hover:opacity-60 transition-opacity">Company</a>
+            <a href="technology.html" class="hover:opacity-60 transition-opacity">Technology</a>
+            <a href="application.html" class="hover:opacity-60 transition-opacity">Applications</a>
+            <a href="index.html#contact" class="hover:opacity-60 transition-opacity">Contact</a>
+        </nav>
+        <div class="hidden md:flex gap-5 items-center">
+            <a href="index.html" class="hover:opacity-60 transition-opacity">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="w-5 h-5" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Tech Hero Section -->
+    <section
+        class="relative pt-48 pb-32 md:pt-60 md:pb-40 px-6 md:px-12 bg-zinc-900 text-white overflow-hidden flex items-center">
+        <!-- 배경 -->
+        <div class="absolute inset-0">
+            <img src="technology_1.png" alt="Company Background"
+                class="w-full h-full object-cover object-top opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-zinc-900"></div>
+        </div>
+
+        <div class="max-w-[1600px] mx-auto relative z-10 w-full">
+            <div class="max-w-4xl sn-reveal">
+                <p class="text-xs font-bold text-sky-400 uppercase tracking-widest mb-6">Understanding Polyurea</p>
+                <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tighter mb-8">
+                    차세대 무용제 고기능성<br>라이닝 소재의 혁신.
+                </h1>
+                <p class="text-lg md:text-xl text-zinc-300 leading-relaxed font-light max-w-2xl">
+                    이소시아네이트와 아민의 화학적 융합을 통해 탄생한 폴리우레아는 가혹한 산업 현장에서도 압도적이고 변함없는 내구성을 자랑합니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. 폴리우레아란? & 도식 이미지 -->
+    <section id="polyurea" class="py-32 px-6 md:px-12 max-w-[1600px] mx-auto">
+        <div class="flex flex-col gap-16 sn-reveal">
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-6">폴리우레아란?</h2>
+                    <p class="text-xl text-zinc-500 font-light leading-relaxed mb-8">
+                        이소시아네이트(Part A)와 아민 화합물(Part B)의 초고속 화학적 융합으로 완성되는 차세대 엘라스토머(Next-Gen Elastomer)입니다.
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-8 border-l border-zinc-200 pl-8">
+                    <div>
+                        <h3 class="text-lg font-bold text-sky-900 mb-2">초고속 화학적 융합</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed">A제(이소시아네이트)와 B제(아민 화합물)가 혼합되는 즉시 반응하여 강력한 도막을
+                            형성하는 차세대 엘라스토머입니다.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-sky-900 mb-2">친환경 무용제</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed">유기용제가 전혀 포함되지 않아 화재 위험과 환경 오염을 최소화하는 고기능성 안전
+                            소재입니다.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-sky-900 mb-2">다양한 시공 방법</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed">고속 뿜칠 도장뿐만 아니라, 일반 롤러나 붓으로 시공 가능한 수도장용 제품군도
+                            완비되어 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 폴리우레아 이해 돕는 도식 이미지 (박스 테두리 제거 및 자연스러운 통합) -->
+            <div class="w-full rounded-3xl overflow-hidden sn-reveal mt-8">
+                <img src="technology_2_trans.png" alt="Understanding Polyurea" class="w-full h-auto object-cover">
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+    <!-- 2. 아로마틱 vs 알리파틱 -->
+    <section id="aromaticvsaliphatic" class="py-32 px-6 md:px-12 bg-zinc-50 border-t border-zinc-200/60">
+        <div class="max-w-[1600px] mx-auto">
+            <div class="mb-16 sn-reveal">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4">목적에 맞춘 최적의 선택</h2>
+                <p class="text-zinc-500 text-lg">아로마틱(방향족) vs 알리파틱(지방족)</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Aromatic Card -->
+                <div
+                    class="group bg-white border border-zinc-200/60 rounded-3xl p-10 sn-reveal hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="flex flex-wrap items-center gap-4 mb-6">
+                        <h3 class="text-3xl font-bold tracking-tight text-zinc-900">방향족 <span
+                                class="text-xl text-zinc-400 font-medium ml-1">(Aromatic)</span></h3>
+                        <span
+                            class="px-3 py-1 bg-zinc-900 text-white text-xs font-bold rounded-full uppercase tracking-wider">실내·산업용
+                            스탠다드</span>
+                    </div>
+
+                    <!-- 추가된 이미지 영역 -->
+                    <div class="w-full aspect-video rounded-2xl overflow-hidden mb-8 bg-zinc-100 shrink-0">
+                        <img src="technology_3.png" alt="방향족(Aromatic) 적용 환경"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <ul class="flex flex-col gap-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-1.5 h-1.5 rounded-full bg-zinc-900 mt-2 shrink-0"></div>
+                            <div>
+                                <p class="text-sm font-bold text-zinc-900 mb-1">핵심 물성</p>
+                                <p class="text-sm text-zinc-500 leading-relaxed break-keep">압도적인 고강도, 빠른 속경화 및 우수한 내화학성
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-1.5 h-1.5 rounded-full bg-zinc-900 mt-2 shrink-0"></div>
+                            <div>
+                                <p class="text-sm font-bold text-zinc-900 mb-1">최적 환경</p>
+                                <p class="text-sm text-zinc-500 leading-relaxed break-keep">중장비가 다니는 물류 창고, 공장 바닥, 화학 탱크
+                                    내부</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-1.5 h-1.5 rounded-full bg-red-500 mt-2 shrink-0"></div>
+                            <div>
+                                <p class="text-sm font-bold text-red-500 mb-1">주의 사항</p>
+                                <p class="text-sm text-zinc-500 leading-relaxed break-keep">장기적인 자외선(UV) 노출 시 표면 황변 발생
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Aliphatic Card -->
+                <div
+                    class="group bg-white border border-zinc-200/60 rounded-3xl p-10 sn-reveal hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="flex flex-wrap items-center gap-4 mb-6">
+                        <h3 class="text-3xl font-bold tracking-tight text-zinc-900">지방족 <span
+                                class="text-xl text-zinc-400 font-medium ml-1">(Aliphatic)</span></h3>
+                        <span
+                            class="px-3 py-1 bg-[#E0F2FE] text-sky-700 text-xs font-bold rounded-full uppercase tracking-wider">옥외
+                            프리미엄 하이엔드</span>
+                    </div>
+
+                    <!-- 추가된 이미지 영역 -->
+                    <div class="w-full aspect-video rounded-2xl overflow-hidden mb-8 bg-zinc-100 shrink-0">
+                        <img src="technology_4.jpg" alt="지방족(Aliphatic) 적용 환경"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <ul class="flex flex-col gap-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-1.5 h-1.5 rounded-full bg-zinc-900 mt-2 shrink-0"></div>
+                            <div>
+                                <p class="text-sm font-bold text-zinc-900 mb-1">핵심 물성</p>
+                                <p class="text-sm text-zinc-500 leading-relaxed break-keep">완벽한 자외선 차단, 초내후성 및 영구적 색상
+                                    안정성</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-1.5 h-1.5 rounded-full bg-zinc-900 mt-2 shrink-0"></div>
+                            <div>
+                                <p class="text-sm font-bold text-zinc-900 mb-1">최적 환경</p>
+                                <p class="text-sm text-zinc-500 leading-relaxed break-keep">옥외 노출 옥상 방수, 야외 수영장, 선박 탑코트
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-1.5 h-1.5 rounded-full bg-sky-500 mt-2 shrink-0"></div>
+                            <div>
+                                <p class="text-sm font-bold text-sky-600 mb-1">혁신 포인트</p>
+                                <p class="text-sm text-zinc-500 leading-relaxed break-keep">별도의 보호 상도 없이 단독 노출 시공 가능</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 기존 소재를 뛰어넘는 3대 혁신 (hover scale 애니메이션 포함) -->
+    <section id="innovation" class="py-32 px-6 md:px-12 bg-zinc-50 border-t border-zinc-200/60">
+        <div class="mb-16 sn-reveal">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4">기존 소재를 뛰어넘는 3대 혁신</h2>
+            <p class="text-zinc-500 text-lg">SWD 폴리우레아 기술의 핵심 경쟁력</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Innovation 1 -->
+            <div
+                class="group bg-white border border-zinc-200/60 rounded-3xl p-8 sn-reveal hover:shadow-xl transition-all duration-300 flex flex-col">
+
+                <!-- 혁신 1 이미지 영역 (파일명을 상황에 맞게 교체) -->
+                <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-zinc-100 shrink-0">
+                    <img src="technology_5.jpg" alt="초고속 경화 및 시공"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4 tracking-tight">초고속 경화 및 시공</h3>
+                <p class="text-zinc-500 leading-relaxed text-sm text-justify break-keep">
+                    스프레이 도포 직후 5~15초 내에 도막을 형성합니다. 수 분 내 보행, 수 시간 내 차량 통행이 가능하여 공기 단축 및 영업 손실을 최소화합니다.
+                </p>
+            </div>
+
+            <!-- Innovation 2 -->
+            <div
+                class="group bg-white border border-zinc-200/60 rounded-3xl p-8 sn-reveal hover:shadow-xl transition-all duration-300 flex flex-col">
+
+                <!-- 혁신 2 이미지 영역 -->
+                <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-zinc-100 shrink-0">
+                    <img src="technology_6.jpg" alt="압도적 강도와 유연성"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4 tracking-tight">압도적 강도와 유연성</h3>
+                <p class="text-zinc-500 leading-relaxed text-sm text-justify break-keep">
+                    외부의 물리적 충격을 흡수하고, 400% 이상의 신장률로 크랙 브릿징 성능이 탁월합니다. 구조물의 수축 및 팽창에 도막 찢어짐 없이 완벽히 대응합니다.
+                </p>
+            </div>
+
+            <!-- Innovation 3 -->
+            <div
+                class="group bg-white border border-zinc-200/60 rounded-3xl p-8 sn-reveal hover:shadow-xl transition-all duration-300 flex flex-col">
+
+                <!-- 혁신 3 이미지 영역 -->
+                <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-zinc-100 shrink-0">
+                    <img src="technology_7.JPG" alt="산업용 친환경 솔루션"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4 tracking-tight">산업용 친환경 솔루션</h3>
+                <p class="text-zinc-500 leading-relaxed text-sm text-justify break-keep">
+                    100% 고형분 물질로 인화성 및 유기용제(VOC)가 전혀 포함되지 않은 무독성 제품입니다. 밀폐된 지하 공간 시공 시에도 중독 및 화재 위험을 원천 차단합니다.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-24 px-6 md:px-12 border-t border-zinc-200">
+        <div class="max-w-[1600px] mx-auto sn-reveal">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-8 mb-24">
+                <div class="md:col-span-4">
+                    <div class="text-3xl font-black tracking-tighter mb-6">SWD KOREA</div>
+                    <p class="text-zinc-500 text-sm leading-relaxed max-w-sm mb-8">고성능 폴리우레아 및 폴리아스파틱 코팅제로<br>
+                        선박과 산업 인프라를 완벽하게 보호합니다. </p>
+                </div>
+                <div class="md:col-span-2 md:col-start-7 flex flex-col gap-4 text-sm">
+                    <h4 class="font-bold text-zinc-900 mb-2">Category</h4>
+                    <a href="index.html#core-solutions" class="text-zinc-500 hover:text-zinc-900 transition-colors">Core
+                        Solutions</a>
+                    <a href="index.html#primer" class="text-zinc-500 hover:text-zinc-900 transition-colors">Primer</a>
+                    <a href="index.html#polyurea"
+                        class="text-zinc-500 hover:text-zinc-900 transition-colors">Polyurea</a>
+                    <a href="index.html#topcoat" class="text-zinc-500 hover:text-zinc-900 transition-colors">Topcoat</a>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-4 text-sm">
+                    <h4 class="font-bold text-zinc-900 mb-2">Technology</h4>
+                    <a href="technology.html#polyurea"
+                        class="text-zinc-500 hover:text-zinc-900 transition-colors">Polyurea</a>
+                    <a href="technology.html#aromaticvsaliphatic"
+                        class="text-zinc-500 hover:text-zinc-900 transition-colors">Aromatic</a>
+                    <a href="technology.html#aromaticvsaliphatic"
+                        class="text-zinc-500 hover:text-zinc-900 transition-colors">Aliphatic</a>
+                    <a href="technology.html#innovation"
+                        class="text-zinc-500 hover:text-zinc-900 transition-colors">Innovation</a>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-4 text-sm">
+                    <h4 class="font-bold text-zinc-900 mb-2">Support</h4>
+                    <a href="index.html#contact" class="text-zinc-500 hover:text-zinc-900 transition-colors">Contact</a>
+                </div>
+            </div>
+            <div
+                class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-zinc-200 text-xs text-zinc-400 gap-4">
+                <p>상호명: 엠앤씨하이텍(주) | 부산광역시 영도구 산업로 23 일신빌딩, 49008</p>
+                <p>copyright © 2026 M&C Hi-Tech Co.,Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>document.addEventListener('DOMContentLoaded', function () {
+
+            // Intersection Observer for scroll animations
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('sn-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }
+
+                , {
+                    threshold: 0.1, rootMargin: '0px 0px -40px 0px'
+                });
+
+            document.querySelectorAll('.sn-reveal').forEach(function (el) {
+                observer.observe(el);
+            });
+
+            // Header scroll effect
+            const header = document.getElementById('main-header');
+            const logoLight = document.getElementById('logo-light');
+            const logoDark = document.getElementById('logo-dark');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                    header.style.color = '#18181b'; // zinc-900
+                    header.style.backdropFilter = 'blur(8px)';
+                    header.style.borderBottomColor = 'rgba(0, 0, 0, 0.1)';
+
+                    // 로고 교체 (흰색 로고 숨기고, 기존 로고 표시)
+                    if (logoLight) logoLight.classList.add('hidden');
+                    if (logoDark) logoDark.classList.remove('hidden');
+                }
+
+                else {
+                    header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+                    header.style.color = 'rgb(255, 255, 255)';
+                    header.style.backdropFilter = 'blur(0px)';
+                    header.style.borderBottomColor = 'rgba(0, 0, 0, 0)';
+
+                    // 로고 교체 (기존 로고 숨기고, 흰색 로고 표시)
+                    if (logoLight) logoLight.classList.remove('hidden');
+                    if (logoDark) logoDark.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
