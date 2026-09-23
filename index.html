@@ -1324,19 +1324,18 @@
             id="main-header"
             style="background-color: rgba(0, 0, 0, 0); color: rgb(255, 255, 255); backdrop-filter: blur(0px);">
 
-            <!--div class="text-2xl font-black tracking-tighter">SWD KOREA</div>-->
             <!-- 로고 및 홈 링크 -->
             <a href="./" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <!-- 스크롤 전: 어두운 배경에서 보일 밝은(흰색) 로고 -->
-                <img src="logo_white.png" id="logo-light" alt="SWD Logo Light"
+                <!-- 스크롤 전: 어두운/투명 배경에서 보일 밝은 로고 -->
+                <img src="logo_white.png" id="logo-light" alt="SWD Korea Light Logo"
                     class="h-8 md:h-10 w-auto object-contain">
-
-                <!-- 스크롤 후: 하얀 배경에서 보일 기존(검은/파란색) 로고 (처음엔 hidden으로 숨김) -->
-                <img src="logo.png" id="logo-dark" alt="SWD Logo Dark" class="h-8 md:h-10 w-auto object-contain hidden">
-
+                <!-- 스크롤 후: 하얀 배경에서 보일 기존 로고 (초기 상태 숨김) -->
+                <img src="logo.png" id="logo-dark" alt="SWD Korea Dark Logo"
+                    class="h-8 md:h-10 w-auto object-contain hidden">
                 <span class="text-2xl font-black tracking-tighter mt-1">SWD KOREA</span>
             </a>
 
+            <!-- 데스크탑 네비게이션 -->
             <nav class="hidden md:flex gap-10 text-[13px] font-semibold tracking-wide uppercase">
                 <a href="company.html" class="hover:opacity-60 transition-opacity">Company</a>
                 <a href="technology.html" class="hover:opacity-60 transition-opacity">Technology</a>
@@ -1344,13 +1343,30 @@
                 <a href="application.html" class="hover:opacity-60 transition-opacity">Applications</a>
                 <a href="#contact" class="hover:opacity-60 transition-opacity">Contact</a>
             </nav>
-            <div class="hidden md:flex gap-5 items-center"><button class="hover:opacity-60 transition-opacity"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+            <!-- 우측 아이콘 그룹 -->
+            <div class="flex items-center gap-4 md:gap-5">
+                <!-- 검색 버튼 (데스크탑에서만 표시) -->
+                <button aria-label="Search" class="hidden md:block hover:opacity-60 transition-opacity">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="w-5 h-5" aria-hidden="true">
                         <circle cx="11" cy="11" r="8"></circle>
                         <path d="m21 21-4.3-4.3"></path>
-                    </svg></button></div>
+                    </svg>
+                </button>
+
+                <!-- 모바일 햄버거 메뉴 버튼 (모바일에서만 표시) -->
+                <button aria-label="Open Menu" id="mobile-menu-btn"
+                    class="block md:hidden hover:opacity-60 transition-opacity text-current">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
         </header>
 
 
@@ -1943,9 +1959,13 @@
         </footer>
     </div>
 
-    <script>document.addEventListener('DOMContentLoaded', function () {
 
-            // Intersection Observer for scroll animations
+
+    <!-- 모바일 메뉴 패널 (JS로 숨기거나 보여줄 대상) -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- 1. Intersection Observer (스크롤 애니메이션) ---
             var observer = new IntersectionObserver(function (entries) {
                 entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
@@ -1953,46 +1973,105 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }
-
-                , {
-                    threshold: 0.1, rootMargin: '0px 0px -40px 0px'
-                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px' // 애니메이션 시작 시점 조절
+            });
 
             document.querySelectorAll('.sn-reveal').forEach(function (el) {
                 observer.observe(el);
             });
 
-            // Header scroll effect
+            // --- 2. Header Scroll Effect (헤더 스타일 및 로고 변경) ---
             const header = document.getElementById('main-header');
             const logoLight = document.getElementById('logo-light');
             const logoDark = document.getElementById('logo-dark');
 
+            // 로고 로직을 별도 함수로 분리하여 안전성 및 가독성 향상
+            function updateLogo(isScrolled) {
+                if (!logoLight || !logoDark) return; // 로고 요소가 없을 경우 에러 방지
+
+                if (isScrolled) {
+                    // 스크롤 시: 흰색 로고 숨기고, 기존 로고 표시
+                    logoLight.classList.add('hidden');
+                    logoDark.classList.remove('hidden');
+                } else {
+                    // 최상단 시: 기존 로고 숨기고, 흰색 로고 표시
+                    logoLight.classList.remove('hidden');
+                    logoDark.classList.add('hidden');
+                }
+            }
+
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                const isScrolled = window.scrollY > 50;
+
+                if (isScrolled) {
+                    // 스크롤 시 스타일 (화이트 배경)
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
                     header.style.color = '#18181b'; // zinc-900
                     header.style.backdropFilter = 'blur(8px)';
-                    header.style.borderBottomColor = 'rgba(0, 0, 0, 0.1)';
+                    header.classList.replace('border-transparent', 'border-gray-200'); // 테두리 표시
 
-                    // 로고 교체 (흰색 로고 숨기고, 기존 로고 표시)
-                    if (logoLight) logoLight.classList.add('hidden');
-                    if (logoDark) logoDark.classList.remove('hidden');
-                }
-
-                else {
+                    updateLogo(true);
+                } else {
+                    // 최상단 스타일 (투명 배경)
                     header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-                    header.style.color = 'rgb(255, 255, 255)';
+                    header.style.color = 'rgb(255, 255, 255)'; // 흰색 텍스트
                     header.style.backdropFilter = 'blur(0px)';
-                    header.style.borderBottomColor = 'rgba(0, 0, 0, 0)';
+                    header.classList.replace('border-gray-200', 'border-transparent'); // 테두리 숨김
 
-                    // 로고 교체 (기존 로고 숨기고, 흰색 로고 표시)
-                    if (logoLight) logoLight.classList.remove('hidden');
-                    if (logoDark) logoDark.classList.add('hidden');
+                    updateLogo(false);
                 }
             });
+
+            // 초기 상태 로고 설정
+            updateLogo(window.scrollY > 50);
+
+
+            // --- 3. Mobile Hamburger Menu (모바일 메뉴 작동 및 UX 개선) ---
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu-panel');
+
+            // [추가] 메뉴 버튼 아이콘 토글을 위한 내부 요소
+            const menuBtnOpen = menuBtn.querySelector('.menu-icon-open');
+            const menuBtnClose = menuBtn.querySelector('.menu-icon-close');
+
+            // 메뉴 상태 (true: 열림, false: 닫힘)
+            let isMenuOpen = false;
+
+            function toggleMenu() {
+                isMenuOpen = !isMenuOpen; // 상태 반전
+
+                // 1. 메뉴 패널 열기/닫기 (active 클래스 토글)
+                mobileMenu.classList.toggle('active', isMenuOpen);
+
+                // 2. 버튼 아이콘 변경 (X 아이콘 <=> ☰ 아이콘)
+                if (menuBtnOpen && menuBtnClose) {
+                    if (isMenuOpen) {
+                        menuBtnOpen.classList.add('hidden');
+                        menuBtnClose.classList.remove('hidden');
+                    } else {
+                        menuBtnOpen.classList.remove('hidden');
+                        menuBtnClose.classList.add('hidden');
+                    }
+                }
+
+                // 3. UX 개선: 메뉴가 열려있을 때 바디 스크롤 방지
+                document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+            }
+
+            menuBtn.addEventListener('click', toggleMenu);
+
+            // 메뉴 링크 클릭 시 메뉴 닫기 (UX 개선)
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (isMenuOpen) toggleMenu(); // 메뉴가 열려있을 때만 닫기
+                });
+            });
+
         });
     </script>
+
 
 </body>
 
