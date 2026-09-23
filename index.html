@@ -1356,14 +1356,23 @@
                     </svg>
                 </button>
 
-                <!-- 모바일 햄버거 메뉴 버튼 (모바일에서만 표시) -->
+                <!-- 헤더의 우측 아이콘 그룹 안에 있는 모바일 햄버거 메뉴 버튼 부분 -->
                 <button aria-label="Open Menu" id="mobile-menu-btn"
-                    class="block md:hidden hover:opacity-60 transition-opacity text-current">
+                    class="block md:hidden hover:opacity-60 transition-opacity text-current relative w-7 h-7 flex items-center justify-center">
+                    <!-- ☰ 아이콘 (평소 상태) -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="menu-icon-open">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <!-- X 아이콘 (메뉴 열림 상태, 초기 상태는 hidden) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="menu-icon-close hidden">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                 </button>
             </div>
