@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | SWD KOREA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .sn-reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+
+        .sn-reveal.sn-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Table highlight hover effect */
+        .matrix-row:hover td {
+            background-color: #f4f4f5;
+            /* zinc-100 */
+        }
+
+        .matrix-row:hover td.swd-col {
+            background-color: #1e3a8a;
+            /* keep blue */
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-zinc-50 font-sans text-zinc-900 selection:bg-zinc-900 selection:text-white">
+
+    <!-- Header (서브 페이지용 고정 다크 헤더) -->
+    <header
+        class="fixed top-0 w-full z-50 px-6 md:px-12 py-5 flex justify-between items-center border-b border-white/10 bg-zinc-900/90 backdrop-blur-md text-white">
+
+        <!-- 로고 및 홈 링크 -->
+        <a href="./" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <img src="logo_white.png" alt="SWD Logo" class="h-8 md:h-10 w-auto object-contain">
+            <span class="text-2xl font-black tracking-tighter mt-1">SWD KOREA</span>
+        </a>
+
+        <nav class="hidden md:flex gap-10 text-[13px] font-semibold tracking-wide uppercase">
+            <a href="company.html" class="hover:opacity-60 transition-opacity">Company</a>
+            <a href="technology.html" class="hover:opacity-60 transition-opacity">Technology</a>
+            <a href="products.html" class="hover:opacity-60 transition-opacity">Products</a>
+            <a href="application.html" class="hover:opacity-60 transition-opacity">Applications</a>
+            <a href="./#contact" class="hover:opacity-60 transition-opacity">Contact</a>
+        </nav>
+        <div class="hidden md:flex gap-5 items-center">
+            <a href="./" class="hover:opacity-60 transition-opacity">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="w-5 h-5" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+
+
+    <!-- Products Hero Section -->
+    <section
+        class="relative pt-48 pb-32 md:pt-60 md:pb-40 px-6 md:px-12 bg-zinc-900 text-white overflow-hidden flex items-center">
+        <!-- 배경 -->
+        <div class="absolute inset-0">
+            <img src="products_main.jpg" alt="Products Background"
+                class="w-full h-full object-cover object-center opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-zinc-900"></div>
+        </div>
+
+        <div class="max-w-[1600px] mx-auto relative z-10 w-full">
+            <div class="max-w-4xl sn-reveal">
+                <p class="text-xs font-bold text-sky-400 uppercase tracking-widest mb-6">KEY PRODUCTS</p>
+                <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tighter mb-8">
+                    최상의 시공 품질을 위한<br>SWD 핵심 제품 라인업.
+                </h1>
+                <p class="text-lg md:text-xl text-zinc-300 leading-relaxed font-light max-w-2xl">
+                    프라이머부터 폴리우레아, 탑코트까지 현장의 조건과 목적에 완벽하게 부합하는 3단계 체계적인 코팅 시스템을 제공합니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 핵심 제품 라인업 매트릭스 -->
+    <section id="product-lineup" class="py-32 px-6 md:px-12 bg-zinc-50">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="mb-16 sn-reveal">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-zinc-900">SWD 핵심 제품 라인업</h2>
+                <p class="text-zinc-500 text-lg font-bold">프로젝트 맞춤형 코팅 시스템 제원표</p>
+            </div>
+
+            <!-- Table Wrapper for Mobile Scroll (매트릭스와 동일한 스타일) -->
+            <div class="w-full overflow-x-auto sn-reveal pb-8">
+                <div
+                    class="min-w-[1000px] xl:min-w-full bg-white border border-zinc-200/80 rounded-3xl shadow-lg overflow-hidden">
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr>
+                                <!-- Code 컬럼 강조 -->
+                                <th
+                                    class="py-5 px-4 bg-[#1E3A8A] border-b-2 border-white/40 text-white font-bold text-lg tracking-tight w-[10%] shadow-md relative z-10">
+                                    Code</th>
+                                <!-- 우측 선은 연하게(zinc-200/80), 바닥 선은 진하게(b-zinc-300) 분리 적용 -->
+                                <th
+                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base">
+                                    카테고리</th>
+                                <th
+                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base">
+                                    적용</th>
+                                <th
+                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base">
+                                    기능</th>
+                                <th
+                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base">
+                                    종류</th>
+                                <th
+                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base">
+                                    Mix 기준</th>
+                                <th
+                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base">
+                                    Mix 비율</th>
+                                <th
+                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base">
+                                    시공 용량<br><span class="text-xs text-zinc-500 font-medium">(kg/m²)</span></th>
+                                <th
+                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-zinc-300 text-zinc-900 font-bold text-base">
+                                    시공 면적<br><span class="text-xs text-zinc-500 font-medium">(m²/kg)</span></th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-[15px]">
+                            <!-- [프라이머 그룹] -->
+                            <!-- Row 1: 8008 -->
+                            <tr class="matrix-row transition-colors duration-200">
+                                <td
+                                    class="text-base py-4 px-4 bg-[#1E3A8A] text-white font-bold shadow-md relative z-10 border-b border-white/20 swd-col transition-colors duration-200">
+                                    8008</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full font-semibold">프라이머</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full font-semibold">메탈</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    전처리</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    2액형</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    무게</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    1:1</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    0.125</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    8</td>
+                            </tr>
+
+                            <!-- Row 2: 8009 (우측 선은 연하게, 바닥 선은 진하게 분리) -->
+                            <tr class="matrix-row transition-colors duration-200">
+                                <td
+                                    class="text-base py-4 px-4 bg-[#1E3A8A] text-white font-bold shadow-md relative z-10 border-b-2 border-white/50 swd-col transition-colors duration-200">
+                                    8009</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full font-semibold">프라이머</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-zinc-200 text-zinc-800 rounded-full font-semibold">콘크리트</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-700 bg-white">
+                                    전처리</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-700 bg-white">
+                                    2액형</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-700 bg-white">
+                                    부피</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-medium bg-white">
+                                    1.5:1</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-medium bg-white">
+                                    0.16</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-zinc-300 text-zinc-900 font-medium bg-white">
+                                    6.25</td>
+                            </tr>
+
+                            <!-- [폴리우레아 그룹] -->
+                            <!-- Row 3: 900 -->
+                            <tr class="matrix-row transition-colors duration-200">
+                                <td
+                                    class="text-base py-4 px-4 bg-[#1E3A8A] text-white font-bold shadow-md relative z-10 border-b border-white/20 swd-col transition-colors duration-200">
+                                    900</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-sky-100 text-sky-800 rounded-full font-semibold">폴리우레아</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full font-semibold">범용</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    방수</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    2액형</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    부피</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    1:1</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    1.08</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    0.93</td>
+                            </tr>
+
+                            <!-- Row 4: 951 -->
+                            <tr class="matrix-row transition-colors duration-200">
+                                <td
+                                    class="text-base py-4 px-4 bg-[#1E3A8A] text-white font-bold shadow-md relative z-10 border-b border-white/20 swd-col transition-colors duration-200">
+                                    951</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-sky-100 text-sky-800 rounded-full font-semibold">폴리우레아</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full font-semibold">범용</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    방수</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    2액형</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    부피</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    1:1</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    1.08</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    0.93</td>
+                            </tr>
+
+                            <!-- Row 5: 562 (우측 선은 연하게, 바닥 선은 진하게 분리) -->
+                            <tr class="matrix-row transition-colors duration-200">
+                                <td
+                                    class="text-base py-4 px-4 bg-[#1E3A8A] text-white font-bold shadow-md relative z-10 border-b-2 border-white/50 swd-col transition-colors duration-200">
+                                    562</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-sky-100 text-sky-800 rounded-full font-semibold">폴리우레아</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full font-semibold">범용</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-700 bg-white">
+                                    방수</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-700 bg-white">
+                                    2액형</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-700 bg-white">
+                                    부피</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-medium bg-white">
+                                    1:1</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-medium bg-white">
+                                    1.08</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b-2 border-zinc-300 text-zinc-900 font-medium bg-white">
+                                    0.93</td>
+                            </tr>
+
+                            <!-- [탑코트 그룹] -->
+                            <!-- Row 6: 9527 -->
+                            <tr class="matrix-row transition-colors duration-200">
+                                <td
+                                    class="text-base py-4 px-4 bg-[#1E3A8A] text-white font-bold shadow-md relative z-10 border-b border-white/20 swd-col transition-colors duration-200">
+                                    9527</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-semibold">탑코트</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full font-semibold">범용</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    방수, 보수</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    2액형</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    무게</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    1:4</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    0.70</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    1.43</td>
+                            </tr>
+
+                            <!-- Row 7: 9528 -->
+                            <tr class="matrix-row transition-colors duration-200">
+                                <td
+                                    class="text-base py-4 px-4 bg-[#1E3A8A] text-white font-bold shadow-md relative z-10 border-b border-white/20 swd-col transition-colors duration-200">
+                                    9528</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-semibold">탑코트</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-zinc-200 text-zinc-800 rounded-full font-semibold">콘크리트</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    방수, 보수</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    1액형</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-400 bg-white">
+                                    -</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-400 bg-white">
+                                    -</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    0.75</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    1.33</td>
+                            </tr>
+
+                            <!-- Row 8: 8027 -->
+                            <tr class="matrix-row transition-colors duration-200">
+                                <td
+                                    class="text-base py-4 px-4 bg-[#1E3A8A] text-white font-bold shadow-md relative z-10 border-b border-white/20 swd-col transition-colors duration-200">
+                                    8027</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-semibold">탑코트</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-zinc-200 text-zinc-800 rounded-full font-semibold">콘크리트</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    자외선</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    2액형</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    무게</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    1:1</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    0.16</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    6.25</td>
+                            </tr>
+
+                            <!-- Row 9: 8028 -->
+                            <tr class="matrix-row transition-colors duration-200">
+                                <td
+                                    class="text-base py-4 px-4 bg-[#1E3A8A] text-white font-bold shadow-md relative z-10 border-b border-white/20 swd-col transition-colors duration-200">
+                                    8028</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-semibold">탑코트</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full font-semibold">메탈</span>
+                                </td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    자외선, 녹방지</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    2액형</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-700 bg-white">
+                                    무게</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    1:2</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    0.16</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-b border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    6.25</td>
+                            </tr>
+
+                            <!-- Row 10: 8029 (마지막 행 - 하단 선을 제거하여 둥근 모서리와 완벽히 밀착) -->
+                            <tr class="matrix-row transition-colors duration-200">
+                                <td
+                                    class="text-base py-4 px-4 bg-[#1E3A8A] text-white font-bold shadow-md relative z-10 swd-col rounded-bl-3xl transition-colors duration-200">
+                                    8029</td>
+                                <td class="text-sm py-4 px-4 border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-semibold">탑코트</span>
+                                </td>
+                                <td class="text-sm py-4 px-4 border-r border-zinc-200/80 text-zinc-800 bg-white">
+                                    <span
+                                        class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full font-semibold">범용</span>
+                                </td>
+                                <td class="text-sm py-4 px-4 border-r border-zinc-200/80 text-zinc-700 bg-white">자외선, 방수
+                                </td>
+                                <td class="text-sm py-4 px-4 border-r border-zinc-200/80 text-zinc-700 bg-white">2액형
+                                </td>
+                                <td class="text-sm py-4 px-4 border-r border-zinc-200/80 text-zinc-700 bg-white">무게</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    1:1</td>
+                                <td
+                                    class="text-sm py-4 px-4 border-r border-zinc-200/80 text-zinc-900 font-medium bg-white">
+                                    0.16</td>
+                                <td class="text-sm py-4 px-4 text-zinc-900 font-medium bg-white rounded-br-3xl">6.25
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-white py-24 px-6 md:px-12 border-t border-zinc-200">
+        <div class="max-w-[1600px] mx-auto sn-reveal">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-8 mb-24">
+                <div class="md:col-span-4">
+                    <div class="text-3xl font-black tracking-tighter mb-6">SWD KOREA</div>
+                    <p class="text-zinc-500 text-sm leading-relaxed max-w-sm mb-8">부식과 마모로부터 완벽하게 보호하는
+                        코팅 시스템,<br>
+                        SWD가 고분자 도료 시대를 열어갑니다.</p>
+                </div>
+                <div class="md:col-span-2 md:col-start-7 flex flex-col gap-4 text-sm">
+                    <h4 class="font-bold text-zinc-900 mb-2">Category</h4>
+                    <a href="index.html#core-solutions" class="text-zinc-500 hover:text-zinc-900 transition-colors">Core
+                        Solutions</a>
+                    <a href="index.html#primer" class="text-zinc-500 hover:text-zinc-900 transition-colors">Primer</a>
+                    <a href="index.html#polyurea"
+                        class="text-zinc-500 hover:text-zinc-900 transition-colors">Polyurea</a>
+                    <a href="index.html#topcoat" class="text-zinc-500 hover:text-zinc-900 transition-colors">Topcoat</a>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-4 text-sm">
+                    <h4 class="font-bold text-zinc-900 mb-2">Technology</h4>
+                    <a href="technology.html#polyurea"
+                        class="text-zinc-500 hover:text-zinc-900 transition-colors">Polyurea</a>
+                    <a href="technology.html#aromaticvsaliphatic"
+                        class="text-zinc-500 hover:text-zinc-900 transition-colors">Aromatic</a>
+                    <a href="technology.html#aromaticvsaliphatic"
+                        class="text-zinc-500 hover:text-zinc-900 transition-colors">Aliphatic</a>
+                    <a href="technology.html#innovation"
+                        class="text-zinc-500 hover:text-zinc-900 transition-colors">Innovation</a>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-4 text-sm">
+                    <h4 class="font-bold text-zinc-900 mb-2">Support</h4>
+                    <a href="index.html#contact" class="text-zinc-500 hover:text-zinc-900 transition-colors">Contact</a>
+                </div>
+            </div>
+            <div
+                class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-zinc-200 text-xs text-zinc-400 gap-4">
+                <p>상호명: 엠앤씨하이텍(주) | 부산광역시 영도구 산업로 23 일신빌딩, 49008</p>
+                <p>copyright © 2026 M&C Hi-Tech Co.,Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>document.addEventListener('DOMContentLoaded', function () {
+
+            // Intersection Observer for scroll animations
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('sn-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }
+
+                , {
+                    threshold: 0.1, rootMargin: '0px 0px -40px 0px'
+                });
+
+            document.querySelectorAll('.sn-reveal').forEach(function (el) {
+                observer.observe(el);
+            });
+
+            // Header scroll effect
+            const header = document.getElementById('main-header');
+            const logoLight = document.getElementById('logo-light');
+            const logoDark = document.getElementById('logo-dark');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                    header.style.color = '#18181b'; // zinc-900
+                    header.style.backdropFilter = 'blur(8px)';
+                    header.style.borderBottomColor = 'rgba(0, 0, 0, 0.1)';
+
+                    // 로고 교체 (흰색 로고 숨기고, 기존 로고 표시)
+                    if (logoLight) logoLight.classList.add('hidden');
+                    if (logoDark) logoDark.classList.remove('hidden');
+                }
+
+                else {
+                    header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+                    header.style.color = 'rgb(255, 255, 255)';
+                    header.style.backdropFilter = 'blur(0px)';
+                    header.style.borderBottomColor = 'rgba(0, 0, 0, 0)';
+
+                    // 로고 교체 (기존 로고 숨기고, 흰색 로고 표시)
+                    if (logoLight) logoLight.classList.remove('hidden');
+                    if (logoDark) logoDark.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
