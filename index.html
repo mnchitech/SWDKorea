@@ -1352,12 +1352,24 @@
                         <path d="m21 21-4.3-4.3"></path>
                     </svg></button></div>
         </header>
+
+
+
+        <!-- 메인 상단 -->
+
         <section class="relative h-screen w-full bg-zinc-900 overflow-hidden flex items-center justify-center">
-            <div class="absolute inset-0"><img alt="Industrial coating background"
-                    class="w-full h-full object-cover object-center opacity-80" referrerpolicy="no-referrer"
-                    src="index_main.jpg">
+            <div class="absolute inset-0">
+                <!-- 이미지 대신 비디오 태그 적용 (index_main.mp4) -->
+                <video autoplay loop muted playsinline class="w-full h-full object-cover object-center opacity-80">
+                    <source src="index_main.mp4" type="video/mp4">
+                    <!-- 비디오 로딩 실패 시 기존 이미지를 대체(Fallback)로 보여줌 -->
+                    <img alt="Industrial coating background" class="w-full h-full object-cover object-center opacity-80"
+                        referrerpolicy="no-referrer" src="index_main.jpg">
+                </video>
+                <!-- 기존의 고급스러운 그라데이션 오버레이 유지 -->
                 <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
             </div>
+
             <div class="relative z-10 text-center px-6 mt-20 flex flex-col items-center">
                 <div class="sn-reveal"><span
                         class="inline-block py-1 px-3 rounded-full bg-sky-500/10 backdrop-blur-md border border-sky-400/30 text-sky-400 text-xs font-bold tracking-widest uppercase mb-6">High-Performance
