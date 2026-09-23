@@ -1376,6 +1376,21 @@
                     </svg>
                 </button>
             </div>
+
+            <!-- 👇 여기에 모바일 메뉴 패널을 추가합니다 (</header> 바로 위) 👇 -->
+            <div id="mobile-menu-panel"
+                class="hidden absolute top-[100%] left-0 w-full bg-zinc-900/95 backdrop-blur-md border-b border-zinc-800 flex-col shadow-2xl">
+                <a href="company.html"
+                    class="block px-6 py-4 text-zinc-300 hover:bg-zinc-800 hover:text-white border-b border-zinc-800/50">Company</a>
+                <a href="technology.html"
+                    class="block px-6 py-4 text-zinc-300 hover:bg-zinc-800 hover:text-white border-b border-zinc-800/50">Technology</a>
+                <a href="products.html"
+                    class="block px-6 py-4 text-zinc-300 hover:bg-zinc-800 hover:text-white border-b border-zinc-800/50">Products</a>
+                <a href="application.html"
+                    class="block px-6 py-4 text-zinc-300 hover:bg-zinc-800 hover:text-white border-b border-zinc-800/50">Applications</a>
+                <a href="#contact" class="block px-6 py-4 text-zinc-300 hover:bg-zinc-800 hover:text-white">Contact</a>
+            </div>
+
         </header>
 
 
@@ -2037,11 +2052,13 @@
             updateLogo(window.scrollY > 50);
 
 
+
+
             // --- 3. Mobile Hamburger Menu (모바일 메뉴 작동 및 UX 개선) ---
             const menuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu-panel');
+            const mobileMenu = document.getElementById('mobile-menu-panel'); // ID 확인 필수
 
-            // [추가] 메뉴 버튼 아이콘 토글을 위한 내부 요소
+            // 버튼 아이콘 토글을 위한 내부 요소
             const menuBtnOpen = menuBtn.querySelector('.menu-icon-open');
             const menuBtnClose = menuBtn.querySelector('.menu-icon-close');
 
@@ -2049,10 +2066,18 @@
             let isMenuOpen = false;
 
             function toggleMenu() {
+                if (!mobileMenu) return; // 메뉴 패널이 없으면 작동 중지(에러 방지)
+
                 isMenuOpen = !isMenuOpen; // 상태 반전
 
-                // 1. 메뉴 패널 열기/닫기 (active 클래스 토글)
-                mobileMenu.classList.toggle('active', isMenuOpen);
+                // 1. 메뉴 패널 열기/닫기 (Tailwind 방식 적용 🚀)
+                if (isMenuOpen) {
+                    mobileMenu.classList.remove('hidden'); // 숨김 해제
+                    mobileMenu.classList.add('flex');      // 패널 표시
+                } else {
+                    mobileMenu.classList.add('hidden');    // 다시 숨김
+                    mobileMenu.classList.remove('flex');
+                }
 
                 // 2. 버튼 아이콘 변경 (X 아이콘 <=> ☰ 아이콘)
                 if (menuBtnOpen && menuBtnClose) {
@@ -2071,12 +2096,14 @@
 
             menuBtn.addEventListener('click', toggleMenu);
 
-            // 메뉴 링크 클릭 시 메뉴 닫기 (UX 개선)
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (isMenuOpen) toggleMenu(); // 메뉴가 열려있을 때만 닫기
+            // 메뉴 링크 클릭 시 메뉴 닫기
+            if (mobileMenu) {
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (isMenuOpen) toggleMenu();
+                    });
                 });
-            });
+            }
 
         });
     </script>
