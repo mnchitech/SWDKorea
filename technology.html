@@ -125,68 +125,77 @@
         </div>
     </section>
 
+
+
     <!-- 1. 폴리우레아란? & 도식 이미지 -->
-    <section id="polyurea" class="py-32 px-6 md:px-12 max-w-[1600px] mx-auto">
-        <div class="flex flex-col gap-16 sn-reveal">
+    <section id="polyurea" class="py-32 px-6 md:px-12">
+        <!-- 다른 섹션들과 구조를 완벽히 통일하기 위해 안쪽 div로 가운데 정렬 컨테이너 이동 -->
+        <div class="max-w-[1600px] mx-auto">
+            <div class="flex flex-col gap-16 sn-reveal">
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-6">폴리우레아란?</h2>
-                    <p class="text-xl text-zinc-500 font-light leading-relaxed mb-8">
-                        이소시아네이트(Part A)와 아민 화합물(Part B)의 초고속 화학적 융합으로 완성되는 차세대 엘라스토머입니다.
-                    </p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-6">폴리우레아란?</h2>
+                        <p class="text-xl text-zinc-500 font-light leading-relaxed mb-8">
+                            이소시아네이트(Part A)와 아민 화합물(Part B)의 초고속 화학적 융합으로 완성되는 차세대 엘라스토머입니다.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col gap-8 border-l border-zinc-200 pl-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-sky-900 mb-2">초고속 화학적 융합</h3>
+                            <p class="text-zinc-500 text-base leading-relaxed">A제(이소시아네이트)와 B제(아민 화합물)가 혼합되는 즉시 반응하여 강력한
+                                도막을
+                                형성하는 차세대 엘라스토머입니다.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-sky-900 mb-2">친환경 무용제</h3>
+                            <p class="text-zinc-500 text-base leading-relaxed">유기용제가 전혀 포함되지 않아 화재 위험과 환경 오염을 최소화하는 고기능성
+                                안전
+                                소재입니다.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-sky-900 mb-2">다양한 시공 방법</h3>
+                            <p class="text-zinc-500 text-base leading-relaxed">스프레이 도장뿐만 아니라, 일반 롤러나 붓으로 시공 가능한 수도장용
+                                제품군도
+                                완비되어 있습니다.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="flex flex-col gap-8 border-l border-zinc-200 pl-8">
-                    <div>
-                        <h3 class="text-xl font-bold text-sky-900 mb-2">초고속 화학적 융합</h3>
-                        <p class="text-zinc-500 text-base leading-relaxed">A제(이소시아네이트)와 B제(아민 화합물)가 혼합되는 즉시 반응하여 강력한 도막을
-                            형성하는 차세대 엘라스토머입니다.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-sky-900 mb-2">친환경 무용제</h3>
-                        <p class="text-zinc-500 text-base leading-relaxed">유기용제가 전혀 포함되지 않아 화재 위험과 환경 오염을 최소화하는 고기능성 안전
-                            소재입니다.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-sky-900 mb-2">다양한 시공 방법</h3>
-                        <p class="text-zinc-500 text-base leading-relaxed">스프레이 도장뿐만 아니라, 일반 롤러나 붓으로 시공 가능한 수도장용 제품군도
-                            완비되어 있습니다.</p>
-                    </div>
+                <!-- 폴리우레아 이해 돕는 도식 이미지 (박스 테두리 제거 및 자연스러운 통합) -->
+                <div class="w-full rounded-3xl overflow-hidden sn-reveal mt-8">
+                    <img src="technology_1.png" alt="Understanding Polyurea" class="w-full h-auto object-cover">
                 </div>
-            </div>
 
-            <!-- 폴리우레아 이해 돕는 도식 이미지 (박스 테두리 제거 및 자연스러운 통합) -->
-            <div class="w-full rounded-3xl overflow-hidden sn-reveal mt-8">
-                <img src="technology_1.png" alt="Understanding Polyurea" class="w-full h-auto object-cover">
             </div>
-
         </div>
     </section>
-
 
 
 
     <!-- 2. 폴리우레아의 역사: 방산 기술에서 민간 핵심 인프라로의 진화 (hover scale 애니메이션 포함) -->
     <section id="history" class="py-32 px-6 md:px-12 bg-zinc-50 border-t border-zinc-200/60">
-        <div class="mb-16 sn-reveal">
-            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4">방산 기술에서 민간 핵심 인프라로 진화한 폴리우레아</h2>
-            <p class="text-zinc-500 text-lg font-bold">다양한 해양 및 산업 인프라가 증명하는 핵심 기술력</p>
-        </div>
+        <!-- 너비 제한 및 가운데 정렬 컨테이너 추가 -->
+        <div class="max-w-[1600px] mx-auto">
+            <div class="mb-16 sn-reveal">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4">방산 기술에서 민간 핵심 인프라로 진화한 폴리우레아</h2>
+                <p class="text-zinc-500 text-lg font-bold">다양한 해양 및 산업 인프라가 증명하는 핵심 기술력</p>
+            </div>
 
-        <!-- 폴리우레아 이해 돕는 도식 이미지 (박스 테두리 제거 및 자연스러운 통합) -->
-        <div class="w-full rounded-3xl overflow-hidden sn-reveal mt-8">
-            <img src="technology_2.png" alt="Understanding Polyurea" class="w-full h-auto object-cover">
+            <!-- 폴리우레아 이해 돕는 도식 이미지 (박스 테두리 제거 및 자연스러운 통합) -->
+            <div class="w-full rounded-3xl overflow-hidden sn-reveal mt-8">
+                <img src="technology_2.png" alt="Understanding Polyurea" class="w-full h-auto object-cover">
+            </div>
         </div>
-
     </section>
-
 
 
 
     <!-- 3. 코팅 소재의 진화: 퍼포먼스 비교 매트릭스 -->
     <section id="performance-matrix" class="py-32 px-6 md:px-12 bg-zinc-50 border-t border-zinc-200/60">
-        <div class="max-w-[1200px] mx-auto">
+        <!-- 다른 섹션들과 동일하게 max-w-[1600px]로 폭 확장 -->
+        <div class="max-w-[1600px] mx-auto">
             <div class="mb-16 sn-reveal">
                 <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4">코팅 소재 비교 매트릭스</h2>
                 <p class="text-zinc-500 text-lg font-bold">폴리우레아 vs 폴리우레탄 vs 에폭시</p>
@@ -299,16 +308,18 @@
 
     <!-- 4. SWD 폴리우레아 시공 기술의 혁신 -->
     <section id="revolution" class="py-32 px-6 md:px-12 bg-zinc-50 border-t border-zinc-200/60">
-        <div class="mb-16 sn-reveal">
-            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4">SWD 폴리우레아 시공 기술의 혁신</h2>
-            <p class="text-zinc-500 text-lg font-bold">특수 장비의 한계를 넘어, 시공 편의성과 내구성을 극대화한 완성형 포트폴리오</p>
-        </div>
+        <!-- 너비 제한 및 가운데 정렬 컨테이너 추가 -->
+        <div class="max-w-[1600px] mx-auto">
+            <div class="mb-16 sn-reveal">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4">SWD 폴리우레아 시공 기술의 혁신</h2>
+                <p class="text-zinc-500 text-lg font-bold">특수 장비의 한계를 넘어, 시공 편의성과 내구성을 극대화한 완성형 포트폴리오</p>
+            </div>
 
-        <!-- 폴리우레아 이해 돕는 도식 이미지 (박스 테두리 제거 및 자연스러운 통합) -->
-        <div class="w-full rounded-3xl overflow-hidden sn-reveal mt-8">
-            <img src="technology_4.png" alt="Understanding Polyurea" class="w-full h-auto object-cover">
+            <!-- 폴리우레아 이해 돕는 도식 이미지 (박스 테두리 제거 및 자연스러운 통합) -->
+            <div class="w-full rounded-3xl overflow-hidden sn-reveal mt-8">
+                <img src="technology_4.png" alt="Understanding Polyurea" class="w-full h-auto object-cover">
+            </div>
         </div>
-
     </section>
 
 
@@ -316,61 +327,64 @@
 
     <!-- 5. 기존 소재를 뛰어넘는 3대 혁신 (hover scale 애니메이션 포함) -->
     <section id="innovation" class="py-32 px-6 md:px-12 bg-zinc-50 border-t border-zinc-200/60">
-        <div class="mb-16 sn-reveal">
-            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4">기존 소재를 뛰어넘는 3대 혁신</h2>
-            <p class="text-zinc-500 text-lg font-bold">SWD 폴리우레아 기술의 핵심 경쟁력</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-            <!-- Innovation 1 -->
-            <div
-                class="group bg-white border border-zinc-200/60 rounded-3xl p-8 sn-reveal hover:shadow-xl transition-all duration-300 flex flex-col">
-
-                <!-- 혁신 1 이미지 영역 (파일명을 상황에 맞게 교체) -->
-                <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-zinc-100 shrink-0">
-                    <img src="technology_5_1.jpg" alt="초고속 경화 및 시공"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-
-                <h3 class="text-2xl font-bold mb-4 tracking-tight">초고속 경화 및 시공</h3>
-                <p class="text-zinc-500 leading-relaxed text-base text-justify break-keep">
-                    스프레이 도포 직후 5~15초 내에 도막을 형성합니다. 수 분 내 보행, 수 시간 내 차량 통행이 가능하여 공기 단축 및 영업 손실을 최소화합니다.
-                </p>
+        <!-- 너비 제한 및 가운데 정렬 컨테이너 추가 -->
+        <div class="max-w-[1600px] mx-auto">
+            <div class="mb-16 sn-reveal">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4">기존 소재를 뛰어넘는 3대 혁신</h2>
+                <p class="text-zinc-500 text-lg font-bold">SWD 폴리우레아 기술의 핵심 경쟁력</p>
             </div>
 
-            <!-- Innovation 2 -->
-            <div
-                class="group bg-white border border-zinc-200/60 rounded-3xl p-8 sn-reveal hover:shadow-xl transition-all duration-300 flex flex-col">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                <!-- 혁신 2 이미지 영역 -->
-                <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-zinc-100 shrink-0">
-                    <img src="technology_5_2.jpg" alt="압도적 강도와 유연성"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <!-- Innovation 1 -->
+                <div
+                    class="group bg-white border border-zinc-200/60 rounded-3xl p-8 sn-reveal hover:shadow-xl transition-all duration-300 flex flex-col">
+
+                    <!-- 혁신 1 이미지 영역 (파일명을 상황에 맞게 교체) -->
+                    <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-zinc-100 shrink-0">
+                        <img src="technology_5_1.jpg" alt="초고속 경화 및 시공"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4 tracking-tight">초고속 경화 및 시공</h3>
+                    <p class="text-zinc-500 leading-relaxed text-base text-justify break-keep">
+                        스프레이 도포 직후 5~15초 내에 도막을 형성합니다. 수 분 내 보행, 수 시간 내 차량 통행이 가능하여 공기 단축 및 영업 손실을 최소화합니다.
+                    </p>
                 </div>
 
-                <h3 class="text-2xl font-bold mb-4 tracking-tight">압도적 강도와 유연성</h3>
-                <p class="text-zinc-500 leading-relaxed text-base text-justify break-keep">
-                    외부의 물리적 충격을 흡수하고, 400% 이상의 신장률로 크랙 브릿징 성능이 탁월합니다. 구조물의 수축 및 팽창에 의한 도막 찢어짐으로부터 안전하게 보호합니다.
-                </p>
-            </div>
+                <!-- Innovation 2 -->
+                <div
+                    class="group bg-white border border-zinc-200/60 rounded-3xl p-8 sn-reveal hover:shadow-xl transition-all duration-300 flex flex-col">
 
-            <!-- Innovation 3 -->
-            <div
-                class="group bg-white border border-zinc-200/60 rounded-3xl p-8 sn-reveal hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <!-- 혁신 2 이미지 영역 -->
+                    <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-zinc-100 shrink-0">
+                        <img src="technology_5_2.jpg" alt="압도적 강도와 유연성"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
 
-                <!-- 혁신 3 이미지 영역 -->
-                <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-zinc-100 shrink-0">
-                    <img src="technology_5_3.jpg" alt="산업용 친환경 솔루션"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <h3 class="text-2xl font-bold mb-4 tracking-tight">압도적 강도와 유연성</h3>
+                    <p class="text-zinc-500 leading-relaxed text-base text-justify break-keep">
+                        외부의 물리적 충격을 흡수하고, 400% 이상의 신장률로 크랙 브릿징 성능이 탁월합니다. 구조물의 수축 및 팽창에 의한 도막 찢어짐으로부터 안전하게 보호합니다.
+                    </p>
                 </div>
 
-                <h3 class="text-2xl font-bold mb-4 tracking-tight">산업용 친환경 솔루션</h3>
-                <p class="text-zinc-500 leading-relaxed text-base text-justify break-keep">
-                    100% 고형분 물질로 인화성 및 유기용제(VOC)가 전혀 포함되지 않은 무독성 제품입니다. 밀폐된 지하 공간 시공 시에도 중독 및 화재 위험을 원천 차단합니다.
-                </p>
-            </div>
+                <!-- Innovation 3 -->
+                <div
+                    class="group bg-white border border-zinc-200/60 rounded-3xl p-8 sn-reveal hover:shadow-xl transition-all duration-300 flex flex-col">
 
+                    <!-- 혁신 3 이미지 영역 -->
+                    <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-zinc-100 shrink-0">
+                        <img src="technology_5_3.jpg" alt="산업용 친환경 솔루션"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4 tracking-tight">산업용 친환경 솔루션</h3>
+                    <p class="text-zinc-500 leading-relaxed text-base text-justify break-keep">
+                        100% 고형분 물질로 인화성 및 유기용제(VOC)가 전혀 포함되지 않은 무독성 제품입니다. 밀폐된 지하 공간 시공 시에도 중독 및 화재 위험을 원천 차단합니다.
+                    </p>
+                </div>
+
+            </div>
         </div>
     </section>
 
