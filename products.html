@@ -150,34 +150,34 @@
             <div class="w-full overflow-x-auto sn-reveal pb-8">
                 <div
                     class="min-w-[1000px] xl:min-w-full bg-white border border-zinc-200/80 rounded-3xl shadow-lg overflow-hidden">
-                    <table class="w-full text-center border-collapse">
+                    <!-- table-fixed 추가로 모든 열 너비를 강제로 균일하게 맞춤 -->
+                    <table class="w-full text-center border-collapse table-fixed break-keep">
                         <thead>
                             <tr>
-                                <!-- Code 컬럼 강조 -->
+                                <!-- 총 8개의 열이므로 각각 w-[12.5%] 지정하여 완벽히 동일한 너비 적용 -->
                                 <th
-                                    class="py-5 px-4 bg-[#1E3A8A] border-b-2 border-white/40 text-white font-bold text-lg tracking-tight w-[10%] shadow-md relative z-10">
+                                    class="py-5 px-2 bg-[#1E3A8A] border-b-2 border-white/40 text-white font-bold text-lg tracking-tight shadow-md relative z-10 w-[12.5%]">
                                     Code</th>
-                                <!-- 우측 선은 연하게(zinc-200/80), 바닥 선은 진하게(b-zinc-300) 분리 적용 -->
                                 <th
-                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base">
+                                    class="py-5 px-2 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base w-[12.5%]">
                                     카테고리</th>
                                 <th
-                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base">
+                                    class="py-5 px-2 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base w-[12.5%]">
                                     적용</th>
                                 <th
-                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base">
+                                    class="py-5 px-2 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base w-[12.5%]">
                                     기능</th>
                                 <th
-                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base">
+                                    class="py-5 px-2 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base w-[12.5%]">
                                     종류</th>
                                 <th
-                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base">
+                                    class="py-5 px-2 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base w-[12.5%]">
                                     Mix 기준</th>
                                 <th
-                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base">
+                                    class="py-5 px-2 bg-zinc-50 border-b-2 border-r border-zinc-200/80 border-b-zinc-300 text-zinc-900 font-bold text-base w-[12.5%]">
                                     시공 용량<br><span class="text-xs text-zinc-500 font-medium">(kg/m²)</span></th>
                                 <th
-                                    class="py-5 px-4 bg-zinc-50 border-b-2 border-zinc-300 text-zinc-900 font-bold text-base">
+                                    class="py-5 px-2 bg-zinc-50 border-b-2 border-zinc-300 text-zinc-900 font-bold text-base w-[12.5%]">
                                     시공 면적<br><span class="text-xs text-zinc-500 font-medium">(m²/kg)</span></th>
                             </tr>
                         </thead>
@@ -215,7 +215,7 @@
                                     8</td>
                             </tr>
 
-                            <!-- Row 2: 8009 (우측 선은 연하게, 바닥 선은 진하게 분리) -->
+                            <!-- Row 2: 8009 -->
                             <tr class="matrix-row transition-colors duration-200">
                                 <td
                                     class="text-base py-4 px-4 bg-[#1E3A8A] text-white font-bold shadow-md relative z-10 border-b-2 border-white/50 swd-col transition-colors duration-200">
@@ -312,7 +312,7 @@
                                     0.93</td>
                             </tr>
 
-                            <!-- Row 5: 562 (우측 선은 연하게, 바닥 선은 진하게 분리) -->
+                            <!-- Row 5: 562 -->
                             <tr class="matrix-row transition-colors duration-200">
                                 <td
                                     class="text-base py-4 px-4 bg-[#1E3A8A] text-white font-bold shadow-md relative z-10 border-b-2 border-white/50 swd-col transition-colors duration-200">
